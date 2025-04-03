@@ -29,7 +29,7 @@ public class Tarea {
 	@Column(name = "fecha_vencimiento")
 	private LocalDate fechaVencimiento;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING) 
 	private Estado estado;
 
 	// Constructor

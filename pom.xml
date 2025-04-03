@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.daw</groupId>
-	<artifactId>daw-task</artifactId>
+	<artifactId>daw-tarea</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>daw-task</name>
-	<description>API Rest para gestionar mis tareas</description>
+	<name>daw-tarea</name>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
