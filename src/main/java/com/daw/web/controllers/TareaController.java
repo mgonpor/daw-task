@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.daw.persistence.entities.Tarea;
@@ -122,9 +123,8 @@ public class TareaController {
 		return ResponseEntity.ok(this.tareaService.findNoVencidas());
 	}
 	
-	// future problems
-	@GetMapping("/buscar/{titulo}")
-	public ResponseEntity<List<Tarea>> findPorTitulo(@PathVariable String titulo){
+	@GetMapping("/buscar")
+	public ResponseEntity<List<Tarea>> findPorTitulo(@RequestParam String titulo){
 		return ResponseEntity.ok(this.tareaService.findPorTitulo(titulo));
 	}
 	

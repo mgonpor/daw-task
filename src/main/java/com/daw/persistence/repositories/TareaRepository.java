@@ -18,11 +18,16 @@ public interface TareaRepository extends ListCrudRepository<Tarea, Integer> {
 	
 //	Obtener las tareas vencidas.
 	List<Tarea> findByFechaVencimientoBefore(LocalDate fecha);
+//	No vencidas
+	List<Tarea> findByFechaVencimientoAfter(LocalDate fecha);
 	
 //	Obtener los títulos de tareas pendientes.
 //	findByEstado
 	
 //	Ordenar tareas por fecha de vencimiento.
 	List<Tarea> findAllByOrderByFechaVencimiento();
+	
+//	Obtener tareas por el titulo
+	List<Tarea> findByTituloContaining(String titulo);
 	
 }

@@ -98,42 +98,30 @@ public class TareaService {
 	}
 	
 	public List<Tarea> findPendientes(){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getEstado() == Estado.PENDIENTE)
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByEstado(Estado.PENDIENTE);
 	}
 	
 	public List<Tarea> findEnProgreso(){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getEstado() == Estado.EN_PROGRESO)
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByEstado(Estado.EN_PROGRESO);
 	}
 	
 	public List<Tarea> findCompletadas(){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getEstado() == Estado.COMPLETADA)
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByEstado(Estado.COMPLETADA);
 	}
 	
 	public List<Tarea> findVencidas(){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getFechaVencimiento().isBefore(LocalDate.now()))
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByFechaVencimientoBefore(LocalDate.now());
 	}
 	
 	public List<Tarea> findNoVencidas(){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getFechaVencimiento().isAfter(LocalDate.now()))
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByFechaVencimientoAfter(LocalDate.now());
 	}
 	
 	public List<Tarea> findPorTitulo(String titulo){
-		return this.tareaRepository.findAll().stream()
-				.filter(t -> t.getTitulo().toLowerCase().contains(titulo.toLowerCase()))
-				.collect(Collectors.toList());
+		return this.tareaRepository.findByTituloContaining(titulo);
 	}
 	
-//	Reals
+//	Otros métodos para practicar
 	public long totalTareasCompletadas() {
 		return this.tareaRepository.countByEstado(Estado.COMPLETADA);
 	}
