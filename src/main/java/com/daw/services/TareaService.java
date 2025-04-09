@@ -121,7 +121,10 @@ public class TareaService {
 		return this.tareaRepository.findByTituloContaining(titulo);
 	}
 	
-//	Otros métodos para practicar
+	
+	
+	
+//	Otros métodos para practicar (NO FORMA PARTE DEL PROYECTO)
 	public long totalTareasCompletadas() {
 		return this.tareaRepository.countByEstado(Estado.COMPLETADA);
 	}
