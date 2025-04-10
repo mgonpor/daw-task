@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "5e4a27ba-a689-4296-9f48-c00db73c99f9",
+		"name": "1DAW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43896303",
+		"_collection_link": "https://mgonpor116-4562501.postman.co/workspace/mgonpor116's-Workspace~37582b30-5fc4-4701-8edf-dca763c08e59/collection/43896303-5e4a27ba-a689-4296-9f48-c00db73c99f9?action=share&source=collection_link&creator=43896303"
+	},
+	"item": [
+		{
+			"name": "daw-tarea",
+			"item": [
+				{
+					"name": "Tareas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"string\",\n  \"descripcion\": \"string\",\n  \"fechaCreacion\": \"2025-04-09\",\n  \"fechaVencimiento\": \"2025-04-09\",\n  \"estado\": \"PENDIENTE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePorID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 5,\n  \"titulo\": \"string\",\n  \"descripcion\": \"string descripcion\",\n  \"fechaVencimiento\": \"2025-04-09\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Iniciar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/7/iniciar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"7",
+								"iniciar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Completar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/7/completar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"7",
+								"completar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vencidas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/vencidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"vencidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NoVencidas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/no-vencidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"no-vencidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pendientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/pendientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"pendientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EnProgreso",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/en-progreso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"en-progreso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Completadas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/completadas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"completadas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PorTitulo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/daw-tarea/tareas/buscar?titulo=comp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"daw-tarea",
+								"tareas",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "comp"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
