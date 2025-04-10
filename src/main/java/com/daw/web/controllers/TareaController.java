@@ -72,7 +72,7 @@ public class TareaController {
 		}
 	}
 	
-	@PutMapping("/iniciar/{idTarea}")
+	@PutMapping("/{idTarea}/iniciar")
 	public ResponseEntity<?> iniciar(@PathVariable int idTarea){
 		try {
 			return ResponseEntity.ok(this.tareaService.iniciar(idTarea));
@@ -85,7 +85,7 @@ public class TareaController {
 		}
 	}
 	
-	@PutMapping("/completar/{idTarea}")
+	@PutMapping("/{idTarea}/completar")
 	public ResponseEntity<?> completar(@PathVariable int idTarea){
 		try {
 			return ResponseEntity.ok(this.tareaService.completar(idTarea));
@@ -103,7 +103,7 @@ public class TareaController {
 		return ResponseEntity.ok(this.tareaService.findPendientes());
 	}
 	
-	@GetMapping("/en_progreso")
+	@GetMapping("/en-progreso")
 	public ResponseEntity<List<Tarea>> findEnProgreso() {
 		return ResponseEntity.ok(this.tareaService.findEnProgreso());
 	}
@@ -118,7 +118,7 @@ public class TareaController {
 		return ResponseEntity.ok(this.tareaService.findVencidas());
 	}
 	
-	@GetMapping("/no_vencidas")
+	@GetMapping("/no-vencidas")
 	public ResponseEntity<List<Tarea>> findNoVencidas(){
 		return ResponseEntity.ok(this.tareaService.findNoVencidas());
 	}

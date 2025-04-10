@@ -44,7 +44,7 @@ public class TareaService {
 		
 	public Tarea create (Tarea tarea) {
 		if(tarea.getFechaVencimiento().isBefore(LocalDate.now())) {
-			throw new TareaException("La fecha de vencimiento es anterior a la de creación (IMPOSIBLE)");
+			throw new TareaException("La fecha de vencimiento es anterior a la de creación");
 		}
 		tarea.setFechaCreacion(LocalDate.now());
 		tarea.setEstado(Estado.PENDIENTE);
@@ -63,10 +63,10 @@ public class TareaService {
 			throw new TareaException("No se permite modificar la fecha de creación y/o el estado");
 		}
 		
-		Tarea tareaBD = this.findById(tarea.getId());
+		Tarea tareaBD = this.findById(idTarea);
 		
 		if(tarea.getFechaVencimiento().isBefore(tareaBD.getFechaCreacion())) {
-			throw new TareaException("La fecha de vencimiento es anterior a la de creación (IMPOSIBLE)");
+			throw new TareaException("La fecha de vencimiento es anterior a la de creación");
 		}
 		
 		tarea.setFechaCreacion(tareaBD.getFechaCreacion());
